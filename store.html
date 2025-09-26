@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enactus JU Store - Sustainable Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="store.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="modern-nav">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <img src="pngegg.png" alt="Enactus JU" class="nav-logo" />
+          <span class="brand-text">Enactus JU Store</span>
+        </div>
+
+        <div class="nav-menu">
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="index.html#about" class="nav-item">About</a>
+          <a href="index.html#projects" class="nav-item">Projects</a>
+          <a href="store.html" class="nav-item active">Store</a>
+          <a href="index.html#contact" class="nav-item">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <a href="store.html" class="store-btn">
+            <i class="fas fa-store"></i>
+          </a>
+          <button class="search-btn" onclick="toggleSearch()">
+            <i class="fas fa-search"></i>
+          </button>
+          <button class="cart-btn" onclick="toggleCart()">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-badge" id="cartBadge">0</span>
+          </button>
+          <div class="mobile-nav-controls">
+            <a href="store.html" class="mobile-store-btn">
+              <i class="fas fa-store"></i>
+            </a>
+            <button class="mobile-search-btn" onclick="toggleSearch()">
+              <i class="fas fa-search"></i>
+            </button>
+            <button class="mobile-cart-btn" onclick="toggleCart()">
+              <i class="fas fa-shopping-bag"></i>
+              <span class="cart-badge" id="mobileCartBadge">0</span>
+            </button>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            Shop with <span class="highlight">Purpose</span>
+          </h1>
+          <p class="hero-subtitle">
+            Discover sustainable products that create positive social impact
+          </p>
+          <div class="hero-features">
+            <div class="feature">
+              <i class="fas fa-leaf"></i>
+              <span>100% Sustainable</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-heart"></i>
+              <span>Social Impact</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-handshake"></i>
+              <span>Community Made</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="floating-card card-1">
+            <img src="images/1.jpg" alt="Product" />
+            <div class="card-info">
+              <h4>Lumina Candles</h4>
+              <span>₹299</span>
+            </div>
+          </div>
+          <div class="floating-card card-2">
+            <img src="images/3.jpg" alt="Product" />
+            <div class="card-info">
+              <h4>Totva Bags</h4>
+              <span>₹399</span>
+            </div>
+          </div>
+          <div class="floating-card card-3">
+            <img src="images/11.png" alt="Product" />
+            <div class="card-info">
+              <h4>Jute Belle</h4>
+              <span>₹349</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search Bar -->
+    <div class="search-overlay" id="searchOverlay">
+      <div class="search-container">
+        <input
+          type="text"
+          placeholder="Search products..."
+          class="search-input"
+          id="searchInput"
+        />
+        <button class="search-close" onclick="toggleSearch()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Categories -->
+    <section class="categories-section">
+      <div class="container">
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="categories-grid">
+          <div class="category-card" data-category="all">
+            <div class="category-icon">
+              <i class="fas fa-th-large"></i>
+            </div>
+            <h3>All Products</h3>
+            <span>10 items</span>
+          </div>
+          <div class="category-card" data-category="candles">
+            <div class="category-icon">
+              <i class="fas fa-fire"></i>
+            </div>
+            <h3>Candles</h3>
+            <span>1 item</span>
+          </div>
+          <div class="category-card" data-category="bags">
+            <div class="category-icon">
+              <i class="fas fa-shopping-bag"></i>
+            </div>
+            <h3>Bags</h3>
+            <span>1 item</span>
+          </div>
+          <div class="category-card" data-category="food">
+            <div class="category-icon">
+              <i class="fas fa-cookie-bite"></i>
+            </div>
+            <h3>Food</h3>
+            <span>3 items</span>
+          </div>
+          <div class="category-card" data-category="crafts">
+            <div class="category-icon">
+              <i class="fas fa-palette"></i>
+            </div>
+            <h3>Handicrafts</h3>
+            <span>5 items</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+      <div class="container">
+        <div class="products-header">
+          <h2 class="section-title">Our Products</h2>
+          <div class="products-controls">
+            <select class="sort-select" id="sortSelect">
+              <option value="default">Sort by</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="name">Name: A to Z</option>
+            </select>
+          </div>
+        </div>
+        <div class="products-grid" id="productsGrid">
+          <!-- Products will be loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h3>Shopping Cart</h3>
+        <button class="cart-close" onclick="toggleCart()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="cart-body" id="cartBody">
+        <div class="empty-cart">
+          <i class="fas fa-shopping-cart"></i>
+          <p>Your cart is empty</p>
+        </div>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total: <strong id="cartTotal">₹0</strong></span>
+        </div>
+        <button class="checkout-btn" onclick="showCheckoutPopup()">
+          <i class="fas fa-credit-card"></i>
+          Checkout
+        </button>
+      </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Checkout Popup -->
+    <div class="checkout-overlay" id="checkoutOverlay">
+      <div class="checkout-popup">
+        <div class="checkout-header">
+          <h3>Complete Your Order</h3>
+          <button class="checkout-close" onclick="closeCheckoutPopup()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="checkout-content">
+          <div class="checkout-icon">
+            <i class="fas fa-shopping-bag"></i>
+          </div>
+          <h4>Thank you for your interest!</h4>
+          <p>Download your order summary and contact us:</p>
+          <div class="checkout-actions">
+            <button class="download-btn" onclick="downloadOrderPDF()">
+              <i class="fas fa-download"></i>
+              <span>Download Order Summary (PDF)</span>
+            </button>
+          </div>
+          <div class="contact-options">
+            <a
+              href="mailto:enactus@jainuniversity.ac.in"
+              class="contact-option"
+            >
+              <i class="fas fa-envelope"></i>
+              <span>enactus@jainuniversity.ac.in</span>
+            </a>
+            <a
+              href="https://instagram.com/enactus_ju"
+              target="_blank"
+              class="contact-option"
+            >
+              <i class="fab fa-instagram"></i>
+              <span>@enactus_ju</span>
+            </a>
+          </div>
+          <p class="checkout-note">
+            Share the PDF with us via email or Instagram for order processing.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="store.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enactus JU - Creating Impact Through Innovation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@skipperhq/web-components@latest/dist/skipper.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="mobile.css" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="theme.js" defer></script>
+  </head>
+  <body class="bg-white">
+    <!-- Navigation -->
+    <nav class="nav-glass fixed top-0 w-full z-50">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-4">
+            <div class="logo-container">
+              <img
+                src="pngegg.png"
+                alt="logo"
+                height="45"
+                width="45"
+                class="logo-bounce"
+              />
+            </div>
+            <span class="text-yellow-400 font-bold text-xl">Enactus JU</span>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="store.html" class="nav-link">Store</a>
+            <a href="#team" class="nav-link">Team</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <button id="theme-toggle" class="theme-toggle">
+              <svg
+                class="sun-icon w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <svg
+                class="moon-icon w-5 h-5 hidden"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Mobile Controls -->
+          <div class="flex items-center space-x-3 md:hidden">
+            <a href="store.html" class="text-yellow-400 bg-yellow-400 text-black p-2 rounded-lg hover:bg-yellow-500 transition-all">
+              <i class="fas fa-store w-5 h-5"></i>
+            </a>
+            <button id="theme-toggle-mobile" class="theme-toggle">
+              <svg
+                class="sun-icon w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <svg
+                class="moon-icon w-5 h-5 hidden"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                />
+              </svg>
+            </button>
+            <button class="text-yellow-400" onclick="toggleMobileMenu()">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="mobile-menu">
+        <div class="flex flex-col p-6 space-y-6 mt-16">
+          <button
+            class="absolute top-6 right-6 text-yellow-400"
+            onclick="toggleMobileMenu()"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+          <a href="#home" class="nav-link-mobile" onclick="toggleMobileMenu()"
+            >Home</a
+          >
+          <a href="#about" class="nav-link-mobile" onclick="toggleMobileMenu()"
+            >About</a
+          >
+          <a
+            href="#projects"
+            class="nav-link-mobile"
+            onclick="toggleMobileMenu()"
+            >Projects</a
+          >
+          <a
+            href="store.html"
+            class="nav-link-mobile"
+            onclick="toggleMobileMenu()"
+            >Store</a
+          >
+          <a href="#team" class="nav-link-mobile" onclick="toggleMobileMenu()"
+            >Team</a
+          >
+          <a
+            href="#contact"
+            class="nav-link-mobile"
+            onclick="toggleMobileMenu()"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="hero-bg"></div>
+      <div class="container mx-auto px-6 text-center relative z-10">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="highlight">EN</span>trepreneurial<br />
+            <span class="highlight">ACT</span>ion
+            <span class="text-yellow-200">&</span>
+            <span class="highlight block">US</span>
+          </h1>
+          <p class="hero-subtitle">
+            Empowering communities, fostering entrepreneurship, and creating
+            sustainable solutions for a better tomorrow.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#contact" class="btn-primary">Join Our Team</a>
+            <a href="#projects" class="btn-secondary">View Projects</a>
+          </div>
+
+          <!-- Impact Numbers -->
+          <div class="impact-grid">
+            <div class="impact-card" data-count="50">
+              <div class="impact-number">0+</div>
+              <div class="impact-label">Active Projects</div>
+            </div>
+            <div class="impact-card" data-count="10000">
+              <div class="impact-number">0+</div>
+              <div class="impact-label">Lives Impacted</div>
+            </div>
+            <div class="impact-card" data-count="200">
+              <div class="impact-number">0+</div>
+              <div class="impact-label">Team Members</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Floating Elements -->
+      <div class="floating-elements">
+        <div class="floating-circle circle-1"></div>
+        <div class="floating-circle circle-2"></div>
+        <div class="floating-circle circle-3"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-white">
+      <div class="container mx-auto px-6">
+        <div class="section-header">
+          <h2 class="section-title">About Enactus</h2>
+          <p class="section-subtitle">
+            We are a community of student, academic and business leaders
+            committed to using the power of entrepreneurial action to create a
+            more sustainable world.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+          <div class="about-content">
+            <h3 class="about-title">Enactus Jain(Deemed-to-be University)</h3>
+            <p class="about-text">
+              Enactus Jain University has been at the forefront of creating
+              positive social impact since our inception. We believe in the
+              transformative power of entrepreneurial thinking and action to
+              address the world's most pressing challenges.
+            </p>
+            <p class="about-text">
+              Through innovative projects, community engagement, and sustainable
+              business solutions, we're shaping the next generation of social
+              entrepreneurs and changemakers.
+            </p>
+          </div>
+          <div class="about-image">
+            <img
+              src="images/group photo.JPG"
+              alt="Enactus Team Group Photo"
+              class="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="feature-card">
+            <div class="feature-photo">
+              <img
+                src="vision.png"
+                alt="Vision"
+                class="w-16 h-16 rounded-lg object-cover"
+              />
+            </div>
+            <h4 class="feature-title">Our Vision</h4>
+            <p class="feature-text">
+              To create a world where all people have the opportunity to improve
+              their livelihoods through entrepreneurial action.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-photo">
+              <img
+                src="flag.png"
+                alt="Mission"
+                class="w-16 h-16 rounded-lg object-cover"
+              />
+            </div>
+            <h4 class="feature-title">Our Mission</h4>
+            <p class="feature-text">
+              To engage the next generation of entrepreneurial leaders to use
+              innovation and business principles to improve the world.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding bg-yellow-50">
+      <div class="container mx-auto px-6">
+        <div class="section-header">
+          <h2 class="section-title">Our Impact Projects</h2>
+          <p class="section-subtitle">
+            Discover how we're creating sustainable solutions and empowering
+            communities through innovative entrepreneurial projects.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-card">
+            <div
+              class="project-image bg-gradient-to-br from-yellow-400 to-yellow-600"
+            >
+              <img
+                src="images/1.jpg"
+                alt="Lumina Project"
+                class="project-img"
+              />
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Lumina</h4>
+              <p class="project-description">
+                Sustainable soy wax candles as an eco-friendly alternative to
+                paraffin candles.
+              </p>
+              <div class="project-impact">
+                <div class="sdg-icons">
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-05.jpg"
+                    alt="SDG 5"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-08.jpg"
+                    alt="SDG 8"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-12.jpg"
+                    alt="SDG 12"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-13.jpg"
+                    alt="SDG 13"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-15.jpg"
+                    alt="SDG 15"
+                    class="sdg-icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <h4 class="overlay-title">Lumina</h4>
+              <p class="overlay-text">
+                <strong>Product:</strong> Sustainable soy wax candles<br />
+                <strong>Impact:</strong> Eco-friendly alternative to paraffin<br />
+                <strong>SDGs:</strong> Gender Equality, Decent Work, Responsible
+                Consumption, Climate Action, Life on Land
+              </p>
+              <a href="store.html" class="overlay-btn">Buy Now</a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div
+              class="project-image bg-gradient-to-br from-white to-yellow-100"
+            >
+              <img src="images/2.png" alt="Drapi Project" class="project-img" />
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Drapi</h4>
+              <p class="project-description">
+                Innovative canvas banners replacing harmful plastic banners.
+              </p>
+              <div class="project-impact">
+                <div class="sdg-icons">
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-09.jpg"
+                    alt="SDG 9"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-12.jpg"
+                    alt="SDG 12"
+                    class="sdg-icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <h4 class="overlay-title">Drapi</h4>
+              <p class="overlay-text">
+                <strong>Product:</strong> Innovative canvas banners<br />
+                <strong>Impact:</strong> Replaces harmful plastic banners<br />
+                <strong>SDGs:</strong> Industry Innovation, Responsible
+                Consumption
+              </p>
+              <a href="store.html" class="overlay-btn">Buy Now</a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div
+              class="project-image bg-gradient-to-br from-yellow-200 to-yellow-400"
+            >
+              <img src="images/3.jpg" alt="Totva Project" class="project-img" />
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Totva</h4>
+              <p class="project-description">
+                Stylish tote bags made from upcycled canvas banners.
+              </p>
+              <div class="project-impact">
+                <div class="sdg-icons">
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-08.jpg"
+                    alt="SDG 8"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-11.jpg"
+                    alt="SDG 11"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-12.jpg"
+                    alt="SDG 12"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-13.jpg"
+                    alt="SDG 13"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-17.jpg"
+                    alt="SDG 17"
+                    class="sdg-icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <h4 class="overlay-title">Totva</h4>
+              <p class="overlay-text">
+                <strong>Product:</strong> Stylish tote bags from upcycled
+                canvas<br />
+                <strong>Impact:</strong> Sustainable fashion accessories<br />
+                <strong>SDGs:</strong> Decent Work, Sustainable Cities,
+                Responsible Consumption, Climate Action, Partnerships
+              </p>
+              <a href="store.html" class="overlay-btn">Buy Now</a>
+            </div>
+          </div>
+
+          <!-- Hidden Projects -->
+          <div class="project-card hidden-project">
+            <div
+              class="project-image bg-gradient-to-br from-yellow-300 to-yellow-500"
+            >
+              <img src="images/4.jpg" alt="Niraa Project" class="project-img" />
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Niraa</h4>
+              <p class="project-description">
+                Handmade goat milk soaps infused with vitamin E in coconut shell
+                holders.
+              </p>
+              <div class="project-impact">
+                <div class="sdg-icons">
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-08.jpg"
+                    alt="SDG 8"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-11.jpg"
+                    alt="SDG 11"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-12.jpg"
+                    alt="SDG 12"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-13.jpg"
+                    alt="SDG 13"
+                    class="sdg-icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <h4 class="overlay-title">Niraa</h4>
+              <p class="overlay-text">
+                <strong>Product:</strong> Handmade goat milk soaps with vitamin
+                E<br />
+                <strong>Impact:</strong> Natural skincare in eco-friendly
+                packaging<br />
+                <strong>SDGs:</strong> Decent Work, Sustainable Cities,
+                Responsible Consumption, Climate Action
+              </p>
+              <a href="store.html" class="overlay-btn">Buy Now</a>
+            </div>
+          </div>
+
+          <div class="project-card hidden-project">
+            <div
+              class="project-image bg-gradient-to-br from-yellow-100 to-yellow-300"
+            >
+              <img src="images/5.png" alt="Wypit Project" class="project-img" />
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Wypit</h4>
+              <p class="project-description">
+                Reusable cloth wipes for effective and sustainable shoe
+                cleaning.
+              </p>
+              <div class="project-impact">
+                <div class="sdg-icons">
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-06.jpg"
+                    alt="SDG 6"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-12.jpg"
+                    alt="SDG 12"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-13.jpg"
+                    alt="SDG 13"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-14.jpg"
+                    alt="SDG 14"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-15.jpg"
+                    alt="SDG 15"
+                    class="sdg-icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <h4 class="overlay-title">Wypit</h4>
+              <p class="overlay-text">
+                <strong>Product:</strong> Reusable cloth wipes for shoe
+                cleaning<br />
+                <strong>Impact:</strong> Sustainable alternative to disposable
+                wipes<br />
+                <strong>SDGs:</strong> Clean Water, Responsible Consumption,
+                Climate Action, Life Below Water, Life on Land
+              </p>
+              <a href="store.html" class="overlay-btn">Buy Now</a>
+            </div>
+          </div>
+
+          <div class="project-card hidden-project">
+            <div
+              class="project-image bg-gradient-to-br from-yellow-400 to-yellow-500"
+            >
+              <img
+                src="images/6.jpg"
+                alt="Crunchware Project"
+                class="project-img"
+              />
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Crunchware</h4>
+              <p class="project-description">
+                Edible cutlery as a zero-waste alternative to disposable
+                plastics.
+              </p>
+              <div class="project-impact">
+                <div class="sdg-icons">
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-08.jpg"
+                    alt="SDG 8"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-12.jpg"
+                    alt="SDG 12"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-13.jpg"
+                    alt="SDG 13"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-14.jpg"
+                    alt="SDG 14"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-15.jpg"
+                    alt="SDG 15"
+                    class="sdg-icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <h4 class="overlay-title">Crunchware</h4>
+              <p class="overlay-text">
+                <strong>Product:</strong> Edible cutlery from natural
+                ingredients<br />
+                <strong>Impact:</strong> Zero-waste alternative to plastic
+                cutlery<br />
+                <strong>SDGs:</strong> Decent Work, Responsible Consumption,
+                Climate Action, Life Below Water, Life on Land
+              </p>
+              <a href="store.html" class="overlay-btn">Buy Now</a>
+            </div>
+          </div>
+
+          <div class="project-card hidden-project">
+            <div
+              class="project-image bg-gradient-to-br from-yellow-200 to-yellow-300"
+            >
+              <img
+                src="images/7.jpg"
+                alt="Vayanna Project"
+                class="project-img"
+              />
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Vayanna</h4>
+              <p class="project-description">
+                Unique handcrafted earrings made from fabric for sustainable
+                fashion.
+              </p>
+              <div class="project-impact">
+                <div class="sdg-icons">
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-04.jpg"
+                    alt="SDG 4"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-08.jpg"
+                    alt="SDG 8"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-12.jpg"
+                    alt="SDG 12"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-13.jpg"
+                    alt="SDG 13"
+                    class="sdg-icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <h4 class="overlay-title">Vayanna</h4>
+              <p class="overlay-text">
+                <strong>Product:</strong> Handcrafted fabric earrings<br />
+                <strong>Impact:</strong> Sustainable fashion accessories<br />
+                <strong>SDGs:</strong> Quality Education, Decent Work,
+                Responsible Consumption, Climate Action
+              </p>
+              <a href="store.html" class="overlay-btn">Buy Now</a>
+            </div>
+          </div>
+
+          <div class="project-card hidden-project">
+            <div
+              class="project-image bg-gradient-to-br from-yellow-500 to-yellow-600"
+            >
+              <img src="images/8.jpg" alt="Fable Project" class="project-img" />
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Fable</h4>
+              <p class="project-description">
+                Eco-friendly bookmarks made from durable and attractive banana
+                fiber.
+              </p>
+              <div class="project-impact">
+                <div class="sdg-icons">
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-04.jpg"
+                    alt="SDG 4"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-08.jpg"
+                    alt="SDG 8"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-12.jpg"
+                    alt="SDG 12"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-13.jpg"
+                    alt="SDG 13"
+                    class="sdg-icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <h4 class="overlay-title">Fable</h4>
+              <p class="overlay-text">
+                <strong>Product:</strong> Eco-friendly banana fiber bookmarks<br />
+                <strong>Impact:</strong> Sustainable reading accessories<br />
+                <strong>SDGs:</strong> Quality Education, Decent Work,
+                Responsible Consumption, Climate Action
+              </p>
+              <a href="store.html" class="overlay-btn">Buy Now</a>
+            </div>
+          </div>
+
+          <div class="project-card hidden-project">
+            <div
+              class="project-image bg-gradient-to-br from-yellow-300 to-yellow-400"
+            >
+              <img
+                src="images/9.jpg"
+                alt="Chocobons Project"
+                class="project-img"
+              />
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Chocobons</h4>
+              <p class="project-description">
+                Healthy chocolates with nutritious and wholesome stuffing.
+              </p>
+              <div class="project-impact">
+                <div class="sdg-icons">
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-03.jpg"
+                    alt="SDG 3"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-08.jpg"
+                    alt="SDG 8"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-12.jpg"
+                    alt="SDG 12"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-13.jpg"
+                    alt="SDG 13"
+                    class="sdg-icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <h4 class="overlay-title">Chocobons</h4>
+              <p class="overlay-text">
+                <strong>Product:</strong> Healthy chocolates with nutritious
+                filling<br />
+                <strong>Impact:</strong> Promoting healthy eating habits<br />
+                <strong>SDGs:</strong> Good Health, Decent Work, Responsible
+                Consumption, Climate Action
+              </p>
+              <a href="store.html" class="overlay-btn">Buy Now</a>
+            </div>
+          </div>
+
+          <div class="project-card hidden-project">
+            <div
+              class="project-image bg-gradient-to-br from-yellow-400 to-yellow-600"
+            >
+              <img
+                src="images/10.png"
+                alt="Bee Bliss Brownies Project"
+                class="project-img"
+              />
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Bee Bliss Brownies</h4>
+              <p class="project-description">
+                Delicious ragi brownies naturally sweetened with honey.
+              </p>
+              <div class="project-impact">
+                <div class="sdg-icons">
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-03.jpg"
+                    alt="SDG 3"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-08.jpg"
+                    alt="SDG 8"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-12.jpg"
+                    alt="SDG 12"
+                    class="sdg-icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <h4 class="overlay-title">Bee Bliss Brownies</h4>
+              <p class="overlay-text">
+                <strong>Product:</strong> Ragi brownies with natural honey<br />
+                <strong>Impact:</strong> Healthy dessert alternative<br />
+                <strong>SDGs:</strong> Good Health, Decent Work, Responsible
+                Consumption
+              </p>
+              <a href="store.html" class="overlay-btn">Buy Now</a>
+            </div>
+          </div>
+
+          <div class="project-card hidden-project">
+            <div
+              class="project-image bg-gradient-to-br from-yellow-200 to-yellow-500"
+            >
+              <img
+                src="images/11.png"
+                alt="Jute Belle Project"
+                class="project-img"
+              />
+            </div>
+            <div class="project-content">
+              <h4 class="project-title">Jute Belle</h4>
+              <p class="project-description">
+                Handcrafted baskets, coasters, keychains from eco-friendly jute
+                yarn.
+              </p>
+              <div class="project-impact">
+                <div class="sdg-icons">
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-08.jpg"
+                    alt="SDG 8"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-11.jpg"
+                    alt="SDG 11"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-12.jpg"
+                    alt="SDG 12"
+                    class="sdg-icon"
+                  />
+                  <img
+                    src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-13.jpg"
+                    alt="SDG 13"
+                    class="sdg-icon"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <h4 class="overlay-title">Jute Belle</h4>
+              <p class="overlay-text">
+                <strong>Product:</strong> Handcrafted jute baskets, coasters,
+                keychains<br />
+                <strong>Impact:</strong> Eco-friendly home and lifestyle
+                products<br />
+                <strong>SDGs:</strong> Decent Work, Sustainable Cities,
+                Responsible Consumption, Climate Action
+              </p>
+              <a href="store.html" class="overlay-btn">Buy Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects-see-more">
+          <button
+            id="seeMoreBtn"
+            class="btn-secondary"
+            onclick="toggleProjects()"
+          >
+            See More Projects
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section-padding bg-white">
+      <div class="container mx-auto px-6">
+        <div class="section-header">
+          <h2 class="section-title">Meet Our Team</h2>
+          <p class="section-subtitle">
+            Passionate changemakers committed to creating positive social impact
+            through entrepreneurial action.
+          </p>
+        </div>
+
+        <h3 class="team-section-title">Advisory Committee</h3>
+        <div class="team-grid">
+          <!-- Extra Secretary Cards with Images -->
+
+          <div class="team-card">
+            <div class="team-avatar">
+              <img
+                src="all mem/dr sagar gulati.jpg"
+                alt="Dr. Sagar Gulati"
+                class="avatar-photo"
+              />
+            </div>
+            <h3 class="team-name">Dr. Sagar Gulati</h3>
+            <p class="team-role">Director of School of CS & IT</p>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar">
+              <img
+                src="all mem/Dr. Neelima M.jpg"
+                alt="Dr. Neelima M"
+                class="avatar-photo"
+              />
+            </div>
+            <h3 class="team-name">Dr. Neelima M</h3>
+            <p class="team-role">HOD of School Of Commerce</p>
+          </div>
+
+          <div class="team-card">
+            <div class="team-avatar">
+              <img
+                src="all mem/enactus india.jpg"
+                alt="Enactus India"
+                class="avatar-photo"
+              />
+            </div>
+            <h3 class="team-name">Enactus India</h3>
+            <p class="team-role">National Organization</p>
+          </div>
+        </div>
+
+        <br />
+
+        <!-- Faculty Coordinators -->
+        <div class="team-section">
+          <h3 class="team-section-title">Faculty Coordinators</h3>
+          <div class="team-grid">
+            <div class="team-card">
+              <div class="team-avatar">
+                <img
+                  src="all mem/teacher co ordinator.png"
+                  alt="Dr. Swapna HR"
+                  class="avatar-photo"
+                />
+              </div>
+              <h4 class="team-name">Dr. Swapna HR</h4>
+              <p class="team-role">Teacher Coordinator</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-avatar">
+                <img
+                  src="all mem/faculty incharge.png"
+                  alt="Mr. Vainik VS"
+                  class="avatar-photo"
+                />
+              </div>
+              <h4 class="team-name">Mr. Vainik VS</h4>
+              <p class="team-role">Faculty in Charge</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Team -->
+        <div class="team-section">
+          <h3 class="team-section-title">Core Team</h3>
+          <div class="core-team-grid">
+            <!-- President -->
+            <div class="team-card president-card">
+              <div class="team-avatar">
+                <img
+                  src="all mem/smriti.png"
+                  alt="Smriti Vinay"
+                  class="avatar-photo"
+                />
+              </div>
+              <h4 class="team-name">Smriti Vinay</h4>
+              <p class="team-role">President</p>
+            </div>
+
+            <!-- Vice President -->
+            <div class="team-card vp-card">
+              <div class="team-avatar">
+                <img
+                  src="all mem/manu.png"
+                  alt="Manu Bharadwaj"
+                  class="avatar-photo"
+                />
+              </div>
+              <h4 class="team-name">Manu Bharadwaj</h4>
+              <p class="team-role">Vice President</p>
+            </div>
+
+            <!-- Secretaries -->
+            <div class="team-card">
+              <div class="team-avatar">
+                <img
+                  src="all mem/harnikaa.png"
+                  alt="Harinikaa M"
+                  class="avatar-photo"
+                />
+              </div>
+              <h4 class="team-name">Harinikaa M</h4>
+              <p class="team-role">Secretary of Projects</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-avatar">
+                <img
+                  src="all mem/sandhya.png"
+                  alt="Sandhya"
+                  class="avatar-photo"
+                />
+              </div>
+              <h4 class="team-name">Sandhya</h4>
+              <p class="team-role">Secretary of Finance</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-avatar">
+                <img
+                  src="all mem/kiran.png"
+                  alt="Kiran B"
+                  class="avatar-photo"
+                />
+              </div>
+              <h4 class="team-name">Kiran B</h4>
+              <p class="team-role">Secretary of Organising</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-avatar">
+                <img
+                  src="all mem/Ashal D'costa.png"
+                  alt="Ashal D'costa"
+                  class="avatar-photo"
+                />
+              </div>
+              <h4 class="team-name">Ashal D'costa</h4>
+              <p class="team-role">Secretary of Public Relations</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-avatar">
+                <img
+                  src="all mem/Jiya Johnson.png"
+                  alt="Jiya Johnson"
+                  class="avatar-photo"
+                />
+              </div>
+              <h4 class="team-name">Jiya Johnson</h4>
+              <p class="team-role">Secretary of Marketing</p>
+            </div>
+
+            <div class="team-card">
+              <div class="team-avatar">
+                <img
+                  src="all mem/Zoya Khan.png"
+                  alt="Zoya Khan"
+                  class="avatar-photo"
+                />
+              </div>
+              <h4 class="team-name">Zoya Khan</h4>
+              <p class="team-role">Secretary of Research</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-yellow-50">
+      <div class="container mx-auto px-6">
+        <div class="section-header">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">
+            Ready to create impact together? Connect with us and be part of the
+            change you want to see in the world.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3 class="contact-info-title">Contact Information</h3>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                  />
+                  <path
+                    d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h4 class="contact-label">Email</h4>
+                <p class="contact-value">enactus@jainuniversity.ac.in</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h4 class="contact-label">Address</h4>
+                <p class="contact-value">
+                  Jain University, Jayanagar, Bangalore, Karnataka
+                </p>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <h3 class="social-title">Follow Us</h3>
+              <div class="social-icons">
+                <a
+                  href="https://www.linkedin.com/company/enactus-ju-153123288/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-icon"
+                >
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.instagram.com/enactus_ju_/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-icon"
+                >
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-container">
+            <h3 class="form-title">Send us a Message</h3>
+            <form class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Name</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    placeholder="Your Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-input"
+                    placeholder="your.email@example.com"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Message</label>
+                <textarea
+                  rows="2"
+                  class="form-textarea"
+                  placeholder="Tell us how we can help you..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn-primary w-full">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container mx-auto px-6">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <div class="logo-icon">
+                <span class="logo-text">E</span>
+              </div>
+              <span class="logo-name">Enactus JU</span>
+            </div>
+            <p class="footer-description">
+              Creating positive impact through entrepreneurial action and
+              sustainable solutions.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h5 class="footer-title">Quick Links</h5>
+            <ul class="footer-links">
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#team">Team</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h5 class="footer-title">Get Involved</h5>
+            <ul class="footer-links">
+              <li><a href="#contact">Join Our Team</a></li>
+              <li><a href="#contact">Volunteer</a></li>
+              <li><a href="#contact">Donate</a></li>
+              <li><a href="#contact">Partner With Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h5 class="footer-title">Newsletter</h5>
+            <p class="newsletter-text">
+              Stay updated with our latest projects and events.
+            </p>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="Your email"
+                required
+              />
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="copyright">
+            © 2025 Enactus Jain University. All rights reserved.
+          </p>
+          <div class="footer-bottom-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop" class="scroll-top-btn">
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 10l7-7m0 0l7 7m-7-7v18"
+        />
+      </svg>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="projects.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="testimonials.js"></script>
+    <script src="mobile.js"></script>
+  </body>
+</html>
